@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Garimpo Digital — As melhores ofertas da internet garimpadas para você economizar todo dia">
+<title>Garimpo Digital — Oferta do Momento</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/twemoji.min.js" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#F5C518;
+  --gold2:#E6A817;
+  --green:#16A34A;
+  --green2:#22C55E;
+  --red:#DC2626;
+  --black:#080808;
+  --dark1:#111111;
+  --dark2:#181818;
+  --dark3:#222222;
+  --dark4:#2A2A2A;
+  --text:#F5F5F5;
+  --muted:#999;
+  --border:rgba(255,255,255,0.07);
+}
+body{
+  background:var(--black);
+  color:var(--text);
+  font-family:'Nunito',sans-serif;
+  min-height:100vh;
+  padding-bottom:40px;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:radial-gradient(ellipse at 50% 0%, rgba(245,197,24,0.07) 0%, transparent 60%);
+  pointer-events:none;
+  z-index:0;
+}
+img.emoji{
+  height:1.2em;width:1.2em;
+  vertical-align:-0.15em;
+  display:inline-block;
+}
+.header{
+  position:relative;z-index:1;
+  text-align:center;padding:28px 20px 20px;
+}
+.logo{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.logo-icon{
+  width:48px;height:48px;
+  background:var(--gold);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+  box-shadow:0 0 24px rgba(245,197,24,0.4);
+}
+.logo-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;letter-spacing:2px;color:var(--gold);line-height:1;
+}
+.logo-sub{
+  font-size:10px;color:var(--muted);
+  letter-spacing:2px;text-transform:uppercase;text-align:left;margin-top:2px;
+}
+.live-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(22,163,74,0.15);border:1px solid rgba(22,163,74,0.4);
+  border-radius:20px;padding:5px 14px;
+  font-size:11px;font-weight:700;color:var(--green2);
+  letter-spacing:1px;text-transform:uppercase;
+}
+.live-dot{
+  width:7px;height:7px;background:var(--green2);border-radius:50%;
+  animation:blink 1.2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.wrap{
+  position:relative;z-index:1;
+  max-width:440px;margin:0 auto;padding:0 16px;
+}
+.publicidade-tag{
+  text-align:center;font-size:10px;font-weight:700;
+  color:rgba(255,255,255,0.2);letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.urgencia{
+  background:linear-gradient(135deg,rgba(220,38,38,0.15),rgba(220,38,38,0.05));
+  border:1px solid rgba(220,38,38,0.3);border-radius:12px;
+  padding:10px 16px;display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;font-size:13px;font-weight:700;color:#FCA5A5;
+}
+#timer{
+  font-family:'Bebas Neue',sans-serif;font-size:18px;
+  color:var(--red);letter-spacing:1px;
+}
+.card{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;margin-bottom:14px;
+}
+.card-img-wrap{
+  position:relative;background:var(--dark3);aspect-ratio:1;overflow:hidden;
+}
+.card-img{
+  width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;
+}
+.card-img:hover{transform:scale(1.03)}
+.desconto-badge{
+  position:absolute;top:12px;left:12px;
+  background:var(--red);color:white;
+  font-weight:900;font-size:15px;
+  padding:6px 12px;border-radius:10px;
+  box-shadow:0 4px 12px rgba(220,38,38,0.5);display:none;
+}
+.origem-badge{
+  position:absolute;top:12px;right:12px;
+  background:rgba(0,0,0,0.75);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:4px 10px;
+  font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;
+}
+.card-body{padding:18px}
+.produto-nome{
+  font-size:15px;font-weight:700;line-height:1.4;color:var(--text);
+  margin-bottom:14px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.preco-wrap{
+  display:flex;align-items:flex-end;gap:10px;margin-bottom:14px;
+}
+.preco-label{font-size:12px;color:var(--muted);margin-bottom:4px}
+.preco-valor{
+  font-family:'Bebas Neue',sans-serif;font-size:44px;
+  color:var(--gold);line-height:1;letter-spacing:1px;
+}
+.preco-economia{
+  background:rgba(22,163,74,0.15);border:1px solid rgba(22,163,74,0.3);
+  border-radius:8px;padding:4px 10px;
+  font-size:12px;font-weight:700;color:var(--green2);
+  margin-bottom:6px;display:none;
+}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.pill{
+  display:flex;align-items:center;gap:5px;
+  background:var(--dark4);border:1px solid var(--border);
+  border-radius:8px;padding:6px 12px;
+  font-size:12px;font-weight:700;color:var(--muted);
+}
+.pill.green{color:var(--green2);border-color:rgba(34,197,94,0.2);background:rgba(34,197,94,0.05)}
+.pill.gold{color:var(--gold);border-color:rgba(245,197,24,0.2);background:rgba(245,197,24,0.05)}
+.btn-cta{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:17px;
+  background:var(--gold);color:var(--black);
+  text-decoration:none;font-weight:900;font-size:16px;
+  border-radius:14px;letter-spacing:0.3px;
+  box-shadow:0 6px 24px rgba(245,197,24,0.35);
+  transition:all 0.2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif;
+}
+.btn-cta:hover{
+  background:var(--gold2);box-shadow:0 8px 32px rgba(245,197,24,0.5);transform:translateY(-1px);
+}
+.btn-cta:active{transform:scale(0.98)}
+.btn-share{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:13px;margin-top:10px;
+  background:transparent;border:1px solid var(--border);border-radius:12px;
+  color:var(--muted);font-size:13px;font-weight:700;
+  cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;
+}
+.btn-share:hover{border-color:rgba(245,197,24,0.3);color:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.stat{
+  background:var(--dark3);border:1px solid var(--border);
+  border-radius:12px;padding:12px 8px;text-align:center;
+}
+.stat-val{
+  font-family:'Bebas Neue',sans-serif;font-size:22px;
+  color:var(--gold);letter-spacing:1px;line-height:1;
+}
+.stat-label{font-size:10px;color:var(--muted);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.canais-titulo{
+  font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;
+  text-align:center;margin-bottom:10px;
+}
+.canais{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.canal{
+  display:flex;align-items:center;gap:10px;
+  background:var(--dark3);border:1px solid var(--border);
+  border-radius:12px;padding:12px 14px;
+  text-decoration:none;color:var(--text);
+  transition:all 0.2s;font-weight:700;font-size:13px;
+}
+.canal:hover{border-color:rgba(245,197,24,0.3);color:var(--gold)}
+.canal-icon{font-size:22px}
+.canal-name{font-size:13px;font-weight:800}
+.canal-desc{font-size:10px;color:var(--muted);margin-top:1px}
+.disclaimer{
+  text-align:center;font-size:10px;color:var(--muted);
+  padding:12px 0 0;line-height:1.6;
+}
+.atualizado{
+  text-align:center;font-size:11px;margin-top:6px;font-weight:700;
+  color:rgba(255,255,255,0.15);
+}
+.img-placeholder{
+  width:100%;aspect-ratio:1;background:var(--dark3);
+  display:none;align-items:center;justify-content:center;font-size:80px;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <div class="logo-icon">🔍</div>
+    <div>
+      <div class="logo-name">Garimpo Digital</div>
+      <div class="logo-sub">Garimpe • Compare • Economize</div>
+    </div>
+  </div>
+  <br>
+  <div class="live-badge">
+    <span class="live-dot"></span>
+    Oferta ao vivo
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p class="publicidade-tag">#publicidade — link de afiliado</p>
+
+  <div class="urgencia">
+    ⚡ Oferta garimpada agora — expira em <span id="timer">02:00:00</span>
+  </div>
+
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" id="produto-img" src="" alt="" onerror="this.style.display='none';document.getElementById('img-ph').style.display='flex'">
+      <div class="img-placeholder" id="img-ph">🛍️</div>
+      <div class="desconto-badge" id="desconto-badge"></div>
+      <div class="origem-badge" id="origem-badge">Shopee</div>
+    </div>
+    <div class="card-body">
+      <p class="produto-nome" id="produto-nome">Carregando oferta...</p>
+      <div class="preco-wrap">
+        <div>
+          <div class="preco-label">Por apenas</div>
+          <div class="preco-valor" id="preco-val">—</div>
+        </div>
+        <div class="preco-economia" id="economia-badge"></div>
+      </div>
+      <div class="pills">
+        <div class="pill gold">⭐ Bem avaliado</div>
+        <div class="pill">🔒 Compra segura</div>
+        <div class="pill">📦 Confira o frete no link</div>
+      </div>
+      <a class="btn-cta" id="btn-oferta" href="#" target="_blank">
+        🛒 Quero essa oferta agora
+      </a>
+      <button class="btn-share" onclick="compartilhar()">
+        🔗 Compartilhar essa oferta
+      </button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val">🔥</div>
+      <div class="stat-label">Hot hoje</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val" id="stat-desc">—</div>
+      <div class="stat-label">Desconto</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">✅</div>
+      <div class="stat-label">Verificado</div>
+    </div>
+  </div>
+
+  <p class="canais-titulo">📢 Receba ofertas todo dia</p>
+  <div class="canais">
+    <a class="canal" href="https://t.me/garimpodigital_cm" target="_blank">
+      <span class="canal-icon">✈️</span>
+      <div>
+        <div class="canal-name">Telegram</div>
+        <div class="canal-desc">Ofertas no canal</div>
+      </div>
+    </a>
+    <a class="canal" href="https://instagram.com/garimpodigital_cmofc" target="_blank">
+      <span class="canal-icon">📸</span>
+      <div>
+        <div class="canal-name">Instagram</div>
+        <div class="canal-desc">Siga e ative o sino</div>
+      </div>
+    </a>
+  </div>
+
+  <p class="disclaimer">
+    ⚠️ Este é um link de afiliado (#publicidade).<br>
+    Ao comprar, você apoia o canal sem custo extra.<br>
+    Preços sujeitos a alteração sem aviso prévio.
+  </p>
+  <p class="atualizado" id="atualizado">—</p>
+
+</div>
+
+<script>
+const JSON_URL='https://raw.githubusercontent.com/garimpodigitalcm/Ofertas/main/oferta.json';
+
+async function carregarOferta(){
+  try{
+    const r=await fetch(JSON_URL+'?t='+Date.now());
+    const d=await r.json();
+    document.title='Garimpo Digital — '+d.titulo;
+    document.getElementById('produto-nome').textContent=d.titulo;
+    document.getElementById('btn-oferta').href=d.link;
+    const preco=parseFloat(d.preco);
+    if(preco>0){
+      document.getElementById('preco-val').textContent='R$ '+preco.toFixed(2).replace('.',',');
+    }
+    if(d.imagem){
+      const img=document.getElementById('produto-img');
+      img.src=d.imagem;img.alt=d.titulo;img.style.display='block';
+    }
+    if(d.desconto&&d.desconto>0){
+      const db=document.getElementById('desconto-badge');
+      db.textContent='-'+d.desconto+'%';db.style.display='block';
+      const eb=document.getElementById('economia-badge');
+      eb.textContent=d.desconto+'% OFF';eb.style.display='block';
+      document.getElementById('stat-desc').textContent=d.desconto+'%';
+    }
+    if(d.origem){
+      document.getElementById('origem-badge').textContent=d.origem==='ml'?'Mercado Livre':'Shopee';
+    }
+    if(d.atualizado){
+      document.getElementById('atualizado').textContent='Atualizado: '+d.atualizado;
+    }
+    twemoji.parse(document.body,{folder:'svg',ext:'.svg'});
+  }catch(e){
+    document.getElementById('produto-nome').textContent='Acompanhe nossas ofertas no Telegram e Instagram!';
+    document.getElementById('btn-oferta').href='https://t.me/garimpodigital_cm';
+    document.getElementById('btn-oferta').textContent='Ver todas as ofertas';
+    twemoji.parse(document.body,{folder:'svg',ext:'.svg'});
+  }
+}
+
+function compartilhar(){
+  if(navigator.share){
+    navigator.share({
+      title:'Garimpo Digital — Oferta incrível!',
+      text:document.getElementById('produto-nome').textContent,
+      url:window.location.href
+    });
+  }else{
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copiado!');
+  }
+}
+
+function iniciarTimer(){
+  let total=2*60*60;
+  const el=document.getElementById('timer');
+  setInterval(()=>{
+    if(total<=0){el.textContent='EXPIRANDO!';return;}
+    const h=Math.floor(total/3600);
+    const m=Math.floor((total%3600)/60);
+    const s=total%60;
+    el.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    total--;
+  },1000);
+}
+
+carregarOferta();
+iniciarTimer();
+twemoji.parse(document.body,{folder:'svg',ext:'.svg'});
+</script>
+</body>
+</html>
