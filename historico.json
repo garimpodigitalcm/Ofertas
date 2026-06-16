@@ -1,5 +1,14 @@
 [
   {
+    "titulo": "Kit 5 Camiseta Oversized Básica Streetwear Masculina",
+    "preco": "189.99",
+    "link": "https://s.shopee.com.br/Lkuqn6PRl",
+    "imagem": "https://cf.shopee.com.br/file/br-11134207-81ztc-mjjvns8o1tl275",
+    "desconto": 24,
+    "origem": "shopee",
+    "atualizado": "16/06/2026 15:41"
+  },
+  {
     "titulo": "Meia-Calça Térmica Feminina Peluciada Translúcida Alta Elasticidade Super Quente Para Inverno",
     "preco": "22.99",
     "link": "https://s.shopee.com.br/3LOWDFAQNx",
@@ -171,16 +180,6 @@
     "desconto": 44,
     "origem": "shopee",
     "atualizado": "12/06/2026 18:59",
-    "nicho": "esportes-e-academia"
-  },
-  {
-    "titulo": "Camiseta Brasil Personalizada  Nome Número Qualidade Premium Não Desbota",
-    "preco": "32.48",
-    "link": "https://s.shopee.com.br/5q5kVh7shz",
-    "imagem": "https://cf.shopee.com.br/file/br-11134207-820m4-mnbyjb392sxsc2",
-    "desconto": 35,
-    "origem": "shopee",
-    "atualizado": "12/06/2026 18:36",
     "nicho": "esportes-e-academia"
   }
 ]
