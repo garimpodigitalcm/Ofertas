@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garimpo Digital — TikTok Autorizado</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #000;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .card {
+    background: #111;
+    border: 1px solid #D4AF37;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+  }
+  .card h1 { font-size: 24px; color: #D4AF37; margin-bottom: 16px; }
+  .card p { font-size: 16px; color: #aaa; margin-bottom: 20px; line-height: 1.5; }
+  .code-box {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: monospace;
+    font-size: 14px;
+    color: #D4AF37;
+    word-break: break-all;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+  .code-box:hover { border-color: #D4AF37; }
+  .btn {
+    background: #D4AF37;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn:hover { background: #F0D060; }
+  .error { color: #E74C3C; }
+  .success { color: #2ECC71; }
+  #status { margin-top: 12px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🎵 Garimpo Digital × TikTok</h1>
+  <div id="content">
+    <p>Processando autorização...</p>
+  </div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  const error = params.get('error');
+  const contentEl = document.getElementById('content');
+
+  if (error) {
+    contentEl.innerHTML = `
+      <p class="error">Autorização negada: ${error}</p>
+      <p>Tente novamente no app Garimpo Digital.</p>
+    `;
+  } else if (code) {
+    contentEl.innerHTML = `
+      <p class="success">✅ Autorização concedida!</p>
+      <p>Copie o código abaixo e cole no campo do app Garimpo Digital:</p>
+      <div class="code-box" id="codeBox" onclick="copyCode()">${code}</div>
+      <button class="btn" onclick="copyCode()">📋 Copiar código</button>
+      <div id="status"></div>
+    `;
+  } else {
+    contentEl.innerHTML = `
+      <p class="error">Nenhum código recebido.</p>
+      <p>Acesse pelo botão "Autorizar TikTok" no app.</p>
+    `;
+  }
+
+  function copyCode() {
+    navigator.clipboard.writeText(document.getElementById('codeBox').textContent)
+      .then(() => {
+        document.getElementById('status').innerHTML = '<span class="success">✅ Copiado!</span>';
+      })
+      .catch(() => {
+        document.getElementById('status').innerHTML = '<span class="error">Selecione e copie manualmente</span>';
+      });
+  }
+</script>
+</body>
+</html>
